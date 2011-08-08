@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptDependencyResolver", "ScriptDependencyResolver\ScriptDependencyResolver.csproj", "{45B28954-6692-4C6B-BAAC-EBD4F72BE22D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AE826B8E-8E03-431E-B8EA-D7C1765DE7D9}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
@@ -10,12 +8,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		RedBadger.Web.ScriptDependencyResolver.1.0.1.nuspec = RedBadger.Web.ScriptDependencyResolver.1.0.1.nuspec
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbadger.Web.ScriptDependencyResolver.Specs", "Redbadger.Web.ScriptDependencyResolver.Specs\Redbadger.Web.ScriptDependencyResolver.Specs.csproj", "{8A1FFA80-4684-4E53-B103-9ED486BA25C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redbadger.Web.ScriptDependencyResolver", "Redbadger.Web.ScriptDependencyResolver\Redbadger.Web.ScriptDependencyResolver.csproj", "{45B28954-6692-4C6B-BAAC-EBD4F72BE22D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A1FFA80-4684-4E53-B103-9ED486BA25C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1FFA80-4684-4E53-B103-9ED486BA25C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1FFA80-4684-4E53-B103-9ED486BA25C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1FFA80-4684-4E53-B103-9ED486BA25C4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45B28954-6692-4C6B-BAAC-EBD4F72BE22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45B28954-6692-4C6B-BAAC-EBD4F72BE22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45B28954-6692-4C6B-BAAC-EBD4F72BE22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
