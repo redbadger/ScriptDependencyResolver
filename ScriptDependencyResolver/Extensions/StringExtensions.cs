@@ -1,4 +1,4 @@
-﻿namespace ScriptDependencyResolver.Extensions
+﻿namespace RedBadger.Web.ScriptDependencyResolver.Extensions
 {
     using System;
     using System.IO;

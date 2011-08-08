@@ -1,4 +1,4 @@
-﻿namespace ScriptDependencyResolver
+﻿namespace RedBadger.Web.ScriptDependencyResolver
 {
     using System;
     using System.Collections.Generic;
@@ -10,7 +10,7 @@
     using QuickGraph;
     using QuickGraph.Algorithms;
 
-    using ScriptDependencyResolver.Extensions;
+    using RedBadger.Web.ScriptDependencyResolver.Extensions;
 
     public class Resolver : IResolver
     {

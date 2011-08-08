@@ -1,4 +1,4 @@
-namespace ScriptDependencyResolver
+namespace RedBadger.Web.ScriptDependencyResolver
 {
     using System;
     using System.Collections.Generic;
