@@ -9,18 +9,18 @@ Example usage:
 
 private const string WebRoot = @"..\..\..\WebProject";
 
-private static void Main(string[] args)
-{
-    using (Stream output = new FileStream(WebRoot.AppendPath("Tests.js"), FileMode.Create, FileAccess.Write))
+    private static void Main(string[] args)
     {
-        var writer = new StreamWriter(output);
-
-        foreach (string file in
-            new ScriptDependencyResolver().Resolve(WebRoot, "~/Scripts", true))
+        using (Stream output = new FileStream(WebRoot.AppendPath("Tests.js"), FileMode.Create, FileAccess.Write))
         {
-            writer.WriteLine(file);
-        }
+            var writer = new StreamWriter(output);
 
-        writer.Flush();
+            foreach (string file in
+                new ScriptDependencyResolver().Resolve(WebRoot, "~/Scripts", true))
+            {
+                writer.WriteLine(file);
+            }
+
+            writer.Flush();
+        }
     }
-}
