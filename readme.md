@@ -7,7 +7,7 @@ Resolves dependencies between JavaScript files based on declared reference paths
 Example usage:
 ---
 
-private const string WebRoot = @"..\..\..\WebProject";
+	private const string WebRoot = @"..\..\..\WebProject";
 
     private static void Main(string[] args)
     {
