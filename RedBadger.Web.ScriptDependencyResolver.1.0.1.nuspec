@@ -18,7 +18,7 @@ e.g.
     </dependencies>
   </metadata>
   <files>
-    <file src="lib\RedBadger.Web.ScriptDependencyResolver.dll" target="lib\RedBadger.Web.ScriptDependencyResolver.dll" />
-    <file src="lib\RedBadger.Web.ScriptDependencyResolver.pdb" target="lib\RedBadger.Web.ScriptDependencyResolver.pdb" />
+    <file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\RedBadger.Web.ScriptDependencyResolver.dll" target="lib\RedBadger.Web.ScriptDependencyResolver.dll" />
+    <file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\RedBadger.Web.ScriptDependencyResolver.pdb" target="lib\RedBadger.Web.ScriptDependencyResolver.pdb" />
   </files>
 </package>
