@@ -5,6 +5,6 @@ namespace RedBadger.Web.ScriptDependencyResolver
 
     public interface IResolver
     {
-        IEnumerable<string> Resolve(Func<string, bool> predicate);
+        IEnumerable<string> Resolve(Func<string, bool> filterPredicate);
     }
 }

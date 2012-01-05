@@ -32,34 +32,44 @@
             this.scriptFilePattern = scriptFilePattern;
         }
 
+        /// <summary>
+        /// Returns a list of javascript files, ordered according to their dependencies
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<string> Resolve()
         {
             return this.Resolve(file => true);
         }
 
-        public IEnumerable<string> Resolve(Func<string, bool> predicate)
+        /// <summary>
+        /// Returns a list of javascript files, ordered according to their dependencies
+        /// </summary>
+        /// <param name="filterPredicate">A predicate which can be used to filter the input files</param>
+        /// <returns></returns>
+        public IEnumerable<string> Resolve(Func<string, bool> filterPredicate)
         {
             IEnumerable<string> files = Directory.EnumerateFiles(
                 this.applicationRoot.AppendPath(this.scriptsDirectory), 
                 this.scriptFilePattern,
                 SearchOption.AllDirectories);
+
             FileInfo[] fileInfos =
-                files.Where(predicate).Select(file => new FileInfo(file.ToLowerInvariant())).ToArray();
+                files.Where(filterPredicate).Select(file => new FileInfo(file.ToLowerInvariant())).ToArray();
 
             var edges = new HashSet<Edge<string>>();
-            var scripts = new Dictionary<string, string>();
+            var scripts = new List<string>();
 
             foreach (FileInfo source in fileInfos)
             {
                 string script = File.ReadAllText(source.FullName);
-                scripts.Add(source.FullName, DependencyRegex.Replace(script, string.Empty));
+                scripts.Add(source.FullName);
 
                 if (source.Directory != null)
                 {
                     string directory = source.Directory.FullName;
                     Debug.Assert(directory != null, "directory != null");
 
-                    Match match = DependencyRegex.Match(script);
+                    Match match = DependencyRegex.Match(script);                    
                     while (match.Success)
                     {
                         string path = match.Groups["path"].Value;
@@ -77,8 +87,9 @@
                         }
 
                         edges.Add(new Edge<string>(source.FullName, target.FullName.ToLowerInvariant()));
-
+                        
                         match = match.NextMatch();
+                        
                     }
                 }
             }
@@ -92,8 +103,10 @@
             {
                 throw new InvalidOperationException("A script file has a circular dependency", exception);
             }
-
-            return sortedEdges.Reverse().Where(scripts.ContainsKey).Select(s => scripts[s]);
+            
+            var sortedScripts = sortedEdges.Reverse().Where(scripts.Contains).ToList();
+            var unsorted = scripts.Where(s => !sortedScripts.Contains(s)); 
+            return sortedScripts.Concat(unsorted);
         }
     }
 }
