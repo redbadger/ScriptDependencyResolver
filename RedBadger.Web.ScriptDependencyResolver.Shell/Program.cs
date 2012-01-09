@@ -49,7 +49,8 @@ namespace RedBadger.Web.ScriptDependencyResolver.Shell
                 foreach (string file in new Resolver(appRoot, scriptsPath, "*.js").Resolve())
                 {
                     Console.WriteLine("Appending {0}", file);
-                    writer.Write(File.ReadAllText(file));
+                    writer.WriteLine("// " + file.ToLower().Replace(scriptsPath.ToLower(), ""));
+                    writer.WriteLine(File.ReadAllText(file));
                 }                
             }
             Console.WriteLine("Written to {0}.", outputFile);
