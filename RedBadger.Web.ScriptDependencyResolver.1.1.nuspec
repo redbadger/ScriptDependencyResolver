@@ -18,12 +18,8 @@ e.g.
     </dependencies>
   </metadata>
   <files>
-    <file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\RedBadger.Web.ScriptDependencyResolver.dll" target="lib\RedBadger.Web.ScriptDependencyResolver.dll" />
-    <file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\RedBadger.Web.ScriptDependencyResolver.pdb" target="lib\RedBadger.Web.ScriptDependencyResolver.pdb" />
-	<file src="Redbadger.Web.ScriptDependencyResolver.Shell\bin\Release\resolver.exe" target="tools\resolver.exe" />
-	<file src="Redbadger.Web.ScriptDependencyResolver.Shell\bin\Release\resolver.pdb" target="tools\resolver.pdb" />
-	<file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\QuickGraph.dll" target="tools\QuickGraph.dll" />
-	<file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\RedBadger.Web.ScriptDependencyResolver.dll" target="tools\RedBadger.Web.ScriptDependencyResolver.dll" />
-    <file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\RedBadger.Web.ScriptDependencyResolver.pdb" target="tools\RedBadger.Web.ScriptDependencyResolver.pdb" />
+    <file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\RedBadger.Web.ScriptDependencyResolver.dll" target="lib" />    
+	<file src="Redbadger.Web.ScriptDependencyResolver.Shell\bin\Release\*.exe" target="tools" />	
+	<file src="Redbadger.Web.ScriptDependencyResolver\bin\Release\*.dll" target="tools" />	
   </files>
 </package>
