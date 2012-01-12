@@ -49,7 +49,7 @@ namespace RedBadger.Web.ScriptDependencyResolver.Shell
                 foreach (string file in new Resolver(appRoot, scriptsPath, "*.js").Resolve())
                 {
                     Console.WriteLine("Appending {0}", file);
-                    writer.WriteLine("// " + file.ToLower().Replace(scriptsPath.ToLower(), ""));
+                    writer.WriteLine("// ~" + file.ToLower().Replace(scriptsPath.ToLower(), "").Replace('\\', '/'));
                     writer.WriteLine(File.ReadAllText(file));
                 }                
             }
